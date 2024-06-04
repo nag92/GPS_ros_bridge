@@ -1,0 +1,37 @@
+{
+    "name": "ROS1-ROS2 Bridge",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "."
+    },
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-iot.vscode-ros",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools",
+        "twxs.cmake",
+        "eamodio.gitlens"
+    ],
+
+    // "postCreateCommand": "source /opt/ros/noetic/setup.bash && source /opt/ros/humble/setup.bash && rosdep update",
+    // "remoteUser": "vscode",
+    // "mounts": [
+    //     "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    // ],
+    // "workspaceFolder": "/workspace",
+    "runArgs": [
+		"--network=host",
+		"--cap-add=SYS_PTRACE",
+		"--security-opt=seccomp:unconfined",
+		"--security-opt=apparmor:unconfined",
+		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+		"--volume=/mnt/wslg:/mnt/wslg",
+		"--ipc=host",
+		"--privileged",
+
+		// uncomment to use intel iGPU
+		// "--device=/dev/dri"
+	],
+}

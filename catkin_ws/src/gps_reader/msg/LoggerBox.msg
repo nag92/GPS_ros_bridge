@@ -1,0 +1,16 @@
+std_msgs/Header header
+geometry_msgs/Vector3 accel
+geometry_msgs/Vector3 gyro
+geometry_msgs/Vector3 mag
+float64 latitude
+float64 longitude
+float64 altitude
+float64 heading
+float64 ground_speed
+float64 fixtype
+float64 imudegc
+float64 siv
+float64 pdop
+float64 hz
+time gpstime
+time rtctime
