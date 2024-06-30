@@ -3,7 +3,6 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 using std::placeholders::_1;
-
 #include "gps_reader2/msg/logger_box.hpp"
 
 class MinimalSubscriber : public rclcpp::Node
@@ -16,7 +15,7 @@ class MinimalSubscriber : public rclcpp::Node
       
       
       subscriptionGPS_ = this->create_subscription<gps_reader2::msg::LoggerBox>(
-      "/GPS1/GPS", 10, std::bind(&MinimalSubscriber::GPS_callback, this, _1));
+      "/GPS1/gps", 10, std::bind(&MinimalSubscriber::GPS_callback, this, _1));
 
     }
 
@@ -30,7 +29,7 @@ class MinimalSubscriber : public rclcpp::Node
 
     void GPS_callback(const gps_reader2::msg::LoggerBox::SharedPtr msg) const
     {
-      RCLCPP_INFO(this->get_logger(), "I heard: '%0.6f'", msg->latitude);
+      RCLCPP_INFO(this->get_logger(), "I heard: '%f'", msg->accel.vector.x);
     }
 
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;

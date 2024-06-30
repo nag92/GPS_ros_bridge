@@ -1,7 +1,7 @@
 std_msgs/Header header
-geometry_msgs/Vector3 accel
-geometry_msgs/Vector3 gyro
-geometry_msgs/Vector3 mag
+geometry_msgs/Vector3Stamped accel
+geometry_msgs/Vector3Stamped gyro
+geometry_msgs/Vector3Stamped mag
 float64 latitude
 float64 longitude
 float64 altitude

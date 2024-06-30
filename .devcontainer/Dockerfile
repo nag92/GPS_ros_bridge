@@ -31,6 +31,17 @@ RUN apt install -y ros-foxy-ros1-bridge python3-argcomplete ros-dev-tools
 
 RUN apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool
 RUN echo "export ROS_MASTER_URI=http://10.0.0.162:11311" >> /root/.bashrc
+
+
+
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    build-essential \
+    python3-rosdep \
+    python3-rosinstall \
+    python3-vcstools \
+    python3-pip 
+   
+
 # # Set up the entrypoint
 # COPY entrypoint.sh /entrypoint.sh
 # RUN chmod +x /entrypoint.sh

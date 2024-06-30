@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /workspaces/ros_bridge/catkin_ws/install_isolated/setup.sh

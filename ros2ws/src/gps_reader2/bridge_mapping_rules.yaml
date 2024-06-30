@@ -1,3 +1,5 @@
 - 
   ros1_package_name: 'gps_reader'
+  ros1_package_name: 'LoggerBox'
   ros2_package_name: 'gps_reader2'
+
