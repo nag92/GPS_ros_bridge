@@ -17,6 +17,9 @@ class MinimalSubscriber : public rclcpp::Node
       subscriptionGPS_ = this->create_subscription<gps_reader2::msg::LoggerBox>(
       "/GPS1/gps", 10, std::bind(&MinimalSubscriber::GPS_callback, this, _1));
 
+        subscriptionGPS2_ = this->create_subscription<gps_reader2::msg::LoggerBox>(
+      "/GPS2/gps", 10, std::bind(&MinimalSubscriber::GPS2_callback, this, _1));
+
     }
 
 
@@ -32,8 +35,17 @@ class MinimalSubscriber : public rclcpp::Node
       RCLCPP_INFO(this->get_logger(), "I heard: '%f'", msg->accel.vector.x);
     }
 
+
+
+    void GPS2_callback(const gps_reader2::msg::LoggerBox::SharedPtr msg) const
+    {
+      RCLCPP_INFO(this->get_logger(), "I heard2: '%f'", msg->accel.vector.x);
+    }
+
+
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
     rclcpp::Subscription<gps_reader2::msg::LoggerBox>::SharedPtr subscriptionGPS_;
+    rclcpp::Subscription<gps_reader2::msg::LoggerBox>::SharedPtr subscriptionGPS2_;
 
     
 };

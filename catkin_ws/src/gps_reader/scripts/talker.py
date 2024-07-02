@@ -32,33 +32,13 @@ def talker():
 def make_msg():
     
     msg = LoggerBox()
-    # msg.accel.vector.x = float(data_arr["ax"])
-    # msg.accel.vector.y = float(data_arr["ay"])
-    # msg.accel.vector.z = float(data_arr["az"])
-    
-    # msg.gyro.vector.x = float(data_arr["gx"])
-    # msg.gyro.vector.y = float(data_arr["gy"])
-    # msg.gyro.vector.z = float(data_arr["gz"])
-    
-    # msg.mag.vector.x = float(data_arr["mx"])
-    # msg.mag.vector.y = float(data_arr["my"])
-    # msg.mag.vector.z = float(data_arr["mz"])
-    
-    # msg.longitude = float(data_arr["gps_Long"])
-    # msg.latitude = float(data_arr["gps_Lat"])
-    # msg.altitude = float(data_arr["gps_Alt"])
-    # msg.heading = float(data_arr["gps_Heading"])
-    # msg.ground_speed = float(data_arr["gps_GroundSpeed"])
-    
-    # msg.fixtype = float(data_arr["gps_FixType"])
-    # msg.pdop = float(data_arr["gps_pDOP"])
-    # msg.hz = float(data_arr["output_Hz"])
-    # msg.imudegc = float(data_arr["imu_degC"])
-    # msg.siv = float(data_arr["gps_SIV"])
-    
+    msg.accel.vector.x = 5.0 
+    msg.longitude = 5.0
+    msg.latitude = 5.0
+ 
     
    
-    msg.header.frame_id = "hello"
+    msg.header.frame_id = "potato"
     
     # print(gps_date_str)
     # print(gps_date)
