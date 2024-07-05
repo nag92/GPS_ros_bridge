@@ -1,0 +1,7 @@
+
+-
+  enable_foreign_mappings: true
+  ros1_package_name: 'ros1_pkg_name'
+  ros1_service_name: 'ros1_srv_name'
+  ros2_package_name: 'ros2_FOREIGN_pkg_name'  # the package with the message definition
+  ros2_service_name: 'ros2_srv_name'
